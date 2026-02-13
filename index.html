@@ -15,9 +15,15 @@
             <p class="subtitle">Your centralized platform for essential services and verified resources</p>
             
             <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Search for services, visas, healthcare, housing...">
                 <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Search for services, visas, healthcare, housing..." autocomplete="off">
+                <button class="search-clear" id="searchClear" aria-label="Clear search">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
             </div>
+            <div class="search-results-info" id="searchResultsInfo"></div>
 
             <div class="quick-links">
                 <div class="quick-link-btn" onclick="scrollToCategory('immigration')">Immigration</div>
@@ -282,9 +288,21 @@
             </div>
         </div>
 
-        <div class="no-results" id="noResults">
+        <div class="empty-state" id="noResults">
+            <div class="empty-state-icon">🔍</div>
             <h3>No results found</h3>
-            <p>Try different keywords or browse the categories above</p>
+            <p>We couldn't find any resources matching "<span id="searchTermDisplay"></span>"</p>
+            <button class="empty-state-button" onclick="clearSearch()">Clear Search</button>
+            <div class="empty-state-suggestions">
+                <p class="suggestions-title">Try searching for:</p>
+                <div class="suggestion-chips">
+                    <span class="suggestion-chip" onclick="searchFor('visa')">Visa</span>
+                    <span class="suggestion-chip" onclick="searchFor('NHS')">NHS</span>
+                    <span class="suggestion-chip" onclick="searchFor('housing')">Housing</span>
+                    <span class="suggestion-chip" onclick="searchFor('jobs')">Jobs</span>
+                    <span class="suggestion-chip" onclick="searchFor('bank')">Banking</span>
+                </div>
+            </div>
         </div>
 
         <footer>
