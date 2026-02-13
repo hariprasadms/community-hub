@@ -17,12 +17,74 @@
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 20px;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        nav .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        nav .logo {
+            color: white;
+            font-size: 1.3em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-weight: 500;
+            font-size: 0.95em;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+            padding: 5px;
         }
 
         .container {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 20px auto;
+            padding: 0 20px;
         }
 
         header {
@@ -233,17 +295,147 @@
         }
 
         @media (max-width: 768px) {
+            .container {
+                max-width: 100%;
+                margin: 10px auto;
+                padding: 0 10px;
+            }
+
+            nav .nav-container {
+                padding: 0;
+            }
+
+            nav .logo {
+                font-size: 1.1em;
+            }
+
+            nav ul {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 15px;
+            }
+
+            nav ul.mobile-open {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            header {
+                padding: 20px;
+            }
+
             h1 {
                 font-size: 1.8em;
+            }
+
+            .subtitle {
+                font-size: 1em;
+            }
+
+            .search-bar input {
+                padding: 12px 45px 12px 15px;
+                font-size: 14px;
             }
             
             .quick-links {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .quick-link-btn {
+                padding: 12px 8px;
+                font-size: 0.9em;
+            }
+
+            .category-card {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .category-icon {
+                font-size: 1.5em;
+                margin-right: 10px;
+            }
+
+            .category-title {
+                font-size: 1.2em;
+            }
+
+            .resource-item {
+                padding: 12px 15px;
+            }
+
+            .resource-title {
+                font-size: 1em;
+            }
+
+            .resource-link {
+                font-size: 0.85em;
+                word-break: break-word;
+            }
+
+            .resource-description {
+                font-size: 0.85em;
+            }
+
+            .emergency-banner {
+                font-size: 0.85em;
+                padding: 12px 15px;
+            }
+
+            footer {
+                padding: 20px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .subtitle {
+                font-size: 0.9em;
+            }
+
+            .quick-links {
+                grid-template-columns: 1fr;
+            }
+
+            .category-title {
+                font-size: 1.1em;
+            }
+
+            .emergency-banner {
+                font-size: 0.8em;
+                padding: 10px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <span>🇮🇳</span>
+                <span>UK Indian Community Hub</span>
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="uk-settling-guide.html">UK Settling Guide</a></li>
+                <li><a href="immigrant-resources.html">All Resources</a></li>
+                <li><a href="legal.html">Legal Help</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
         <header>
             <h1>🇮🇳 UK Indian Community Hub</h1>
@@ -269,35 +461,33 @@
 
         <!-- Featured UK Settling Guide -->
         <div style="margin: 30px 0;">
-            <div class="category-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: 3px solid #ffc107;">
-                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
-                    <div style="flex: 1; min-width: 300px;">
-                        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                            <span style="font-size: 2.5em; margin-right: 15px;">🇮🇳 → 🇬🇧</span>
-                            <div>
-                                <span style="background: #ffc107; color: #1e3c72; padding: 5px 15px; border-radius: 20px; font-size: 0.85em; font-weight: bold;">⭐ FEATURED GUIDE</span>
-                            </div>
+            <div class="category-card featured-guide-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: 3px solid #ffc107; padding: 30px;">
+                <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 25px;">
+                    <div style="flex: 1; min-width: 280px;">
+                        <div style="display: flex; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+                            <span style="font-size: 2.5em;">🇮🇳 → 🇬🇧</span>
+                            <span style="background: #ffc107; color: #1e3c72; padding: 5px 15px; border-radius: 20px; font-size: 0.85em; font-weight: bold; white-space: nowrap;">⭐ FEATURED GUIDE</span>
                         </div>
-                        <h2 style="font-size: 1.8em; margin-bottom: 15px; color: white;">Complete UK Settling Guide</h2>
-                        <p style="margin-bottom: 20px; opacity: 0.95; line-height: 1.6;">Everything you need to know when moving from India to the UK. Comprehensive guide covering housing, schools, healthcare, finances, travel, and community support.</p>
-                        <a href="uk-settling-guide.html" style="display: inline-block; background: #ffc107; color: #1e3c72; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: all 0.3s; box-shadow: 0 4px 15px rgba(255,193,7,0.4);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 20px rgba(255,193,7,0.6)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 15px rgba(255,193,7,0.4)'">
+                        <h2 style="font-size: 1.8em; margin-bottom: 15px; color: white; line-height: 1.3;">Complete UK Settling Guide</h2>
+                        <p style="margin-bottom: 20px; opacity: 0.95; line-height: 1.6; font-size: 1.05em;">Everything you need to know when moving from India to the UK. Comprehensive guide covering housing, schools, healthcare, finances, travel, and community support.</p>
+                        <a href="uk-settling-guide.html" class="featured-cta-btn" style="display: inline-block; background: #ffc107; color: #1e3c72; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: all 0.3s; box-shadow: 0 4px 15px rgba(255,193,7,0.4);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 20px rgba(255,193,7,0.6)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 15px rgba(255,193,7,0.4)'">
                             View Complete Guide →
                         </a>
                     </div>
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; min-width: 250px;">
-                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; text-align: center; backdrop-filter: blur(10px);">
+                    <div class="featured-icons-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; min-width: 220px;">
+                        <div style="background: rgba(255,255,255,0.2); padding: 15px 12px; border-radius: 10px; text-align: center; backdrop-filter: blur(10px);">
                             <div style="font-size: 2em; margin-bottom: 5px;">🏠</div>
                             <div style="font-size: 0.9em; font-weight: 600;">Housing</div>
                         </div>
-                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; text-align: center; backdrop-filter: blur(10px);">
+                        <div style="background: rgba(255,255,255,0.2); padding: 15px 12px; border-radius: 10px; text-align: center; backdrop-filter: blur(10px);">
                             <div style="font-size: 2em; margin-bottom: 5px;">🎓</div>
                             <div style="font-size: 0.9em; font-weight: 600;">Schools</div>
                         </div>
-                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; text-align: center; backdrop-filter: blur(10px);">
+                        <div style="background: rgba(255,255,255,0.2); padding: 15px 12px; border-radius: 10px; text-align: center; backdrop-filter: blur(10px);">
                             <div style="font-size: 2em; margin-bottom: 5px;">⚕️</div>
                             <div style="font-size: 0.9em; font-weight: 600;">Healthcare</div>
                         </div>
-                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; text-align: center; backdrop-filter: blur(10px);">
+                        <div style="background: rgba(255,255,255,0.2); padding: 15px 12px; border-radius: 10px; text-align: center; backdrop-filter: blur(10px);">
                             <div style="font-size: 2em; margin-bottom: 5px;">💰</div>
                             <div style="font-size: 0.9em; font-weight: 600;">Finances</div>
                         </div>
@@ -305,6 +495,49 @@
                 </div>
             </div>
         </div>
+
+        <style>
+            @media (max-width: 768px) {
+                .featured-guide-card {
+                    padding: 20px !important;
+                }
+                
+                .featured-guide-card h2 {
+                    font-size: 1.5em !important;
+                }
+                
+                .featured-guide-card p {
+                    font-size: 0.95em !important;
+                }
+                
+                .featured-cta-btn {
+                    padding: 12px 30px !important;
+                    font-size: 1em !important;
+                    width: 100%;
+                    text-align: center;
+                }
+                
+                .featured-icons-grid {
+                    width: 100% !important;
+                    min-width: 100% !important;
+                    margin-top: 10px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .featured-guide-card {
+                    padding: 15px !important;
+                }
+                
+                .featured-guide-card h2 {
+                    font-size: 1.3em !important;
+                }
+                
+                .featured-cta-btn {
+                    font-size: 0.95em !important;
+                }
+            }
+        </style>
 
         <div id="categoriesContainer" class="categories">
             <!-- Immigration & Legal -->
@@ -562,9 +795,17 @@
         </div>
 
         <footer>
-            <p>🌟 <strong>UK Indian Community Hub</strong></p>
-            <p>This is a prototype platform. Always verify information with official sources.</p>
-            <p style="margin-top: 15px; font-size: 0.9em;">Last updated: February 2026</p>
+            <p><strong>UK Indian Community Hub</strong></p>
+            <p style="margin-top: 10px;">
+                <a href="index.html" style="color: white; text-decoration: underline;">← Back to Home</a> | 
+                <a href="uk-settling-guide.html" style="color: white; text-decoration: underline;">UK Settling Guide</a> | 
+                <a href="legal.html" style="color: white; text-decoration: underline;">Legal Help</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 0.9em;">Empowering Indian families to thrive in the UK</p>
+            <p style="margin-top: 10px; font-size: 0.85em; opacity: 0.8;">
+                © 2025 UK Indian Community Hub | This is a community resource. Always verify information with official sources.
+            </p>
+            <p style="margin-top: 10px; font-size: 0.85em; opacity: 0.7;">Last updated: February 2026</p>
         </footer>
     </div>
 
@@ -643,6 +884,12 @@
                 toggleCategory(firstCategory);
             }
         });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('mobile-open');
+        }
     </script>
 </body>
 </html>
