@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK Indian Community Hub - Essential Services & Resources</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .search-bar {
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .quick-link-btn {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .quick-link-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .categories {
+            display: grid;
+            gap: 25px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .category-icon {
+            font-size: 2em;
+            margin-right: 15px;
+        }
+
+        .category-title {
+            font-size: 1.5em;
+            color: #333;
+            font-weight: 700;
+            flex-grow: 1;
+        }
+
+        .toggle-icon {
+            font-size: 1.2em;
+            color: #667eea;
+            transition: transform 0.3s;
+        }
+
+        .toggle-icon.rotated {
+            transform: rotate(180deg);
+        }
+
+        .resources-list {
+            display: grid;
+            gap: 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .resources-list.expanded {
+            max-height: 2000px;
+        }
+
+        .resource-item {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s;
+        }
+
+        .resource-item:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .resource-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+
+        .resource-link {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.9em;
+            word-break: break-all;
+        }
+
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+
+        .resource-description {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .verified-badge {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            margin-left: 8px;
+        }
+
+        .emergency-banner {
+            background: #dc3545;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .emergency-banner a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .quick-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🇮🇳 UK Indian Community Hub</h1>
+            <p class="subtitle">Your centralized platform for essential services and verified resources</p>
+            
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for services, visas, healthcare, housing...">
+                <span class="search-icon">🔍</span>
+            </div>
+
+            <div class="quick-links">
+                <div class="quick-link-btn" onclick="scrollToCategory('immigration')">Immigration</div>
+                <div class="quick-link-btn" onclick="scrollToCategory('healthcare')">Healthcare</div>
+                <div class="quick-link-btn" onclick="scrollToCategory('employment')">Employment</div>
+                <div class="quick-link-btn" onclick="scrollToCategory('housing')">Housing</div>
+                <div class="quick-link-btn" onclick="scrollToCategory('community')">Community</div>
+            </div>
+        </header>
+
+        <div class="emergency-banner">
+            🚨 Emergency? Call 999 (Police/Fire/Ambulance) | Non-emergency: 111 (NHS) or 101 (Police)
+        </div>
+
+        <div id="categoriesContainer" class="categories">
+            <!-- Immigration & Legal -->
+            <div class="category-card" data-category="immigration">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <span class="category-icon">📋</span>
+                    <h2 class="category-title">Immigration & Legal Services</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="resources-list">
+                    <div class="resource-item">
+                        <div class="resource-title">UK Visas and Immigration (UKVI) <span class="verified-badge">✓ Official</span></div>
+                        <a href="https://www.gov.uk/browse/visas-immigration" target="_blank" class="resource-link">gov.uk/browse/visas-immigration</a>
+                        <p class="resource-description">Official government portal for visa applications, status checks, and immigration rules</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">Immigration Advice Service <span class="verified-badge">✓ Verified</span></div>
+                        <a href="https://iasservices.org.uk" target="_blank" class="resource-link">iasservices.org.uk</a>
+                        <p class="resource-description">Free immigration advice and legal support for various visa categories</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">Citizens Advice Bureau <span class="verified-badge">✓ Verified</span></div>
+                        <a href="https://www.citizensadvice.org.uk" target="_blank" class="resource-link">citizensadvice.org.uk</a>
+                        <p class="resource-description">Free, confidential advice on legal rights, benefits, and immigration</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">Law Society - Find a Solicitor</div>
+                        <a href="https://solicitors.lawsociety.org.uk" target="_blank" class="resource-link">solicitors.lawsociety.org.uk</a>
+                        <p class="resource-description">Find qualified immigration solicitors in your area</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Healthcare -->
+            <div class="category-card" data-category="healthcare">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <span class="category-icon">🏥</span>
+                    <h2 class="category-title">Healthcare & NHS</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="resources-list">
+                    <div class="resource-item">
+                        <div class="resource-title">NHS - Register with a GP <span class="verified-badge">✓ Official</span></div>
+                        <a href="https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/" target="_blank" class="resource-link">nhs.uk/register-with-gp</a>
+                        <p class="resource-description">Register for free NHS healthcare services</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">NHS 111 Online <span class="verified-badge">✓ Official</span></div>
+                        <a href="https://111.nhs.uk" target="_blank" class="resource-link">111.nhs.uk</a>
+                        <p class="resource-description">Get urgent medical advice online or by phone (call 111)</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">Find a Pharmacy</div>
+                        <a href="https://www.nhs.uk/service-search/pharmacy" target="_blank" class="resource-link">nhs.uk/service-search/pharmacy</a>
+                        <p class="resource-description">Locate nearby pharmacies and check opening hours</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">Mental Health Support - Samaritans</div>
+                        <a href="https://www.samaritans.org" target="_blank" class="resource-link">samaritans.org | Call: 116 123 (Free)</a>
+                        <p class="resource-description">24/7 confidential emotional support</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Employment -->
+            <div class="category-card" data-category="employment">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <span class="category-icon">💼</span>
+                    <h2 class="category-title">Employment & Career</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="resources-list">
+                    <div class="resource-item">
+                        <div class="resource-title">Gov.UK - Check Your Visa Work Rights <span class="verified-badge">✓ Official</span></div>
+                        <a href="https://www.gov.uk/check-job-applicant-right-to-work" target="_blank" class="resource-link">gov.uk/check-job-applicant-right-to-work</a>
+                        <p class="resource-description">Verify what work you're allowed to do on your visa</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">Indeed UK</div>
+                        <a href="https://www.indeed.co.uk" target="_blank" class="resource-link">indeed.co.uk</a>
+                        <p class="resource-description">Major job search platform with thousands of listings</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">National Careers Service <span class="verified-badge">✓ Official</span></div>
+                        <a href="https://nationalcareers.service.gov.uk" target="_blank" class="resource-link">nationalcareers.service.gov.uk</a>
+                        <p class="resource-description">Free career advice, CV help, and skills assessment</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">ACAS - Employment Rights</div>
+                        <a href="https://www.acas.org.uk" target="_blank" class="resource-link">acas.org.uk</a>
+                        <p class="resource-description">Understand your workplace rights and resolve employment issues</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Housing -->
+            <div class="category-card" data-category="housing">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <span class="category-icon">🏠</span>
+                    <h2 class="category-title">Housing & Accommodation</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="resources-list">
+                    <div class="resource-item">
+                        <div class="resource-title">Rightmove</div>
+                        <a href="https://www.rightmove.co.uk" target="_blank" class="resource-link">rightmove.co.uk</a>
+                        <p class="resource-description">UK's largest property portal for rentals and purchases</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">SpareRoom</div>
+                        <a href="https://www.spareroom.co.uk" target="_blank" class="resource-link">spareroom.co.uk</a>
+                        <p class="resource-description">Find flatmates and shared accommodation across the UK</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">Shelter - Housing Advice <span class="verified-badge">✓ Verified</span></div>
+                        <a href="https://england.shelter.org.uk" target="_blank" class="resource-link">england.shelter.org.uk</a>
+                        <p class="resource-description">Free housing advice, tenant rights, and homelessness support</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">Council Tax Information <span class="verified-badge">✓ Official</span></div>
+                        <a href="https://www.gov.uk/council-tax" target="_blank" class="resource-link">gov.uk/council-tax</a>
+                        <p class="resource-description">Understand council tax, exemptions, and how to pay</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banking & Finance -->
+            <div class="category-card" data-category="finance">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <span class="category-icon">💰</span>
+                    <h2 class="category-title">Banking & Finance</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="resources-list">
+                    <div class="resource-item">
+                        <div class="resource-title">Compare UK Bank Accounts</div>
+                        <a href="https://www.moneysavingexpert.com/banking/" target="_blank" class="resource-link">moneysavingexpert.com/banking</a>
+                        <p class="resource-description">Independent comparison of UK current accounts</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">National Insurance Number <span class="verified-badge">✓ Official</span></div>
+                        <a href="https://www.gov.uk/apply-national-insurance-number" target="_blank" class="resource-link">gov.uk/apply-national-insurance-number</a>
+                        <p class="resource-description">Apply for your NI number (required for work and benefits)</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">Money Transfer - Wise</div>
+                        <a href="https://wise.com" target="_blank" class="resource-link">wise.com</a>
+                        <p class="resource-description">Low-cost international money transfers to India</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">Tax Information - HMRC <span class="verified-badge">✓ Official</span></div>
+                        <a href="https://www.gov.uk/income-tax" target="_blank" class="resource-link">gov.uk/income-tax</a>
+                        <p class="resource-description">Understanding UK income tax and filing requirements</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Community & Culture -->
+            <div class="category-card" data-category="community">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <span class="category-icon">🕉️</span>
+                    <h2 class="category-title">Community & Cultural Resources</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="resources-list">
+                    <div class="resource-item">
+                        <div class="resource-title">Hindu Council UK</div>
+                        <a href="https://www.hinducounciluk.org" target="_blank" class="resource-link">hinducounciluk.org</a>
+                        <p class="resource-description">Find temples, cultural events, and community support</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">Indian High Commission</div>
+                        <a href="https://www.hcilondon.gov.in" target="_blank" class="resource-link">hcilondon.gov.in</a>
+                        <p class="resource-description">Passport, visa, and consular services</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">Meetup - Indian Communities</div>
+                        <a href="https://www.meetup.com" target="_blank" class="resource-link">meetup.com</a>
+                        <p class="resource-description">Find local Indian cultural groups and social events</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">Indian Grocery Stores Finder</div>
+                        <a href="https://www.google.com/maps/search/indian+grocery+store" target="_blank" class="resource-link">Google Maps Search</a>
+                        <p class="resource-description">Locate Indian supermarkets and specialty stores near you</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="category-card" data-category="education">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <span class="category-icon">🎓</span>
+                    <h2 class="category-title">Education & Learning</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="resources-list">
+                    <div class="resource-item">
+                        <div class="resource-title">UCAS - University Applications <span class="verified-badge">✓ Official</span></div>
+                        <a href="https://www.ucas.com" target="_blank" class="resource-link">ucas.com</a>
+                        <p class="resource-description">Apply to UK universities and colleges</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">Gov.UK - School Admissions <span class="verified-badge">✓ Official</span></div>
+                        <a href="https://www.gov.uk/schools-admissions" target="_blank" class="resource-link">gov.uk/schools-admissions</a>
+                        <p class="resource-description">Find and apply to schools for your children</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">British Council - IELTS</div>
+                        <a href="https://www.britishcouncil.org/exam/ielts" target="_blank" class="resource-link">britishcouncil.org/exam/ielts</a>
+                        <p class="resource-description">English language testing for immigration and education</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">FutureLearn - Free Courses</div>
+                        <a href="https://www.futurelearn.com" target="_blank" class="resource-link">futurelearn.com</a>
+                        <p class="resource-description">Free online courses from UK universities</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transportation -->
+            <div class="category-card" data-category="transport">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <span class="category-icon">🚗</span>
+                    <h2 class="category-title">Transportation & Driving</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="resources-list">
+                    <div class="resource-item">
+                        <div class="resource-title">DVLA - Driving Licence <span class="verified-badge">✓ Official</span></div>
+                        <a href="https://www.gov.uk/browse/driving" target="_blank" class="resource-link">gov.uk/browse/driving</a>
+                        <p class="resource-description">Exchange foreign licence or apply for UK driving licence</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">Transport for London</div>
+                        <a href="https://tfl.gov.uk" target="_blank" class="resource-link">tfl.gov.uk</a>
+                        <p class="resource-description">London public transport, Oyster cards, and journey planning</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">National Rail</div>
+                        <a href="https://www.nationalrail.co.uk" target="_blank" class="resource-link">nationalrail.co.uk</a>
+                        <p class="resource-description">UK train schedules, tickets, and railcards</p>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-title">Compare Car Insurance</div>
+                        <a href="https://www.comparethemarket.com/car-insurance/" target="_blank" class="resource-link">comparethemarket.com/car-insurance</a>
+                        <p class="resource-description">Find the best car insurance deals</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="no-results" id="noResults">
+            <h3>No results found</h3>
+            <p>Try different keywords or browse the categories above</p>
+        </div>
+
+        <footer>
+            <p>🌟 <strong>UK Indian Community Hub</strong></p>
+            <p>This is a prototype platform. Always verify information with official sources.</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Last updated: February 2026</p>
+        </footer>
+    </div>
+
+    <script>
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const categoriesContainer = document.getElementById('categoriesContainer');
+        const noResults = document.getElementById('noResults');
+
+        searchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const categoryCards = document.querySelectorAll('.category-card');
+            let hasVisibleResults = false;
+
+            categoryCards.forEach(card => {
+                const categoryText = card.textContent.toLowerCase();
+                if (categoryText.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    hasVisibleResults = true;
+                    
+                    // Auto-expand matching categories
+                    if (searchTerm.length > 2) {
+                        const resourcesList = card.querySelector('.resources-list');
+                        resourcesList.classList.add('expanded');
+                        const toggleIcon = card.querySelector('.toggle-icon');
+                        toggleIcon.classList.add('rotated');
+                    }
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Show/hide no results message
+            if (hasVisibleResults) {
+                categoriesContainer.style.display = 'grid';
+                noResults.style.display = 'none';
+            } else {
+                categoriesContainer.style.display = 'none';
+                noResults.style.display = 'block';
+            }
+        });
+
+        // Toggle category expansion
+        function toggleCategory(headerElement) {
+            const resourcesList = headerElement.nextElementSibling;
+            const toggleIcon = headerElement.querySelector('.toggle-icon');
+            
+            resourcesList.classList.toggle('expanded');
+            toggleIcon.classList.toggle('rotated');
+        }
+
+        // Scroll to category
+        function scrollToCategory(categoryName) {
+            const categoryCard = document.querySelector(`[data-category="${categoryName}"]`);
+            if (categoryCard) {
+                categoryCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Auto-expand the category
+                const resourcesList = categoryCard.querySelector('.resources-list');
+                const toggleIcon = categoryCard.querySelector('.toggle-icon');
+                resourcesList.classList.add('expanded');
+                toggleIcon.classList.add('rotated');
+                
+                // Highlight effect
+                categoryCard.style.boxShadow = '0 0 30px rgba(102, 126, 234, 0.5)';
+                setTimeout(() => {
+                    categoryCard.style.boxShadow = '';
+                }, 2000);
+            }
+        }
+
+        // Auto-expand first category on load
+        window.addEventListener('load', function() {
+            const firstCategory = document.querySelector('.category-header');
+            if (firstCategory) {
+                toggleCategory(firstCategory);
+            }
+        });
+    </script>
+</body>
+</html>
