@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essential UK Apps Guide - Must-Have Mobile Apps | UK Indian Community Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px 40px 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .breadcrumb {
+            text-align: left;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            opacity: 0.7;
+            margin: 0 10px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .header-icon {
+            font-size: 3em;
+            margin: 20px 0;
+        }
+
+        nav {
+            background: #f8f9fa;
+            padding: 20px;
+            border-bottom: 3px solid #667eea;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2a5298;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: 600;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 50px;
+            scroll-margin-top: 80px;
+        }
+
+        section h2 {
+            color: #1e3c72;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        section h3 {
+            color: #2a5298;
+            font-size: 1.5em;
+            margin: 25px 0 15px;
+        }
+
+        .info-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+
+        .important {
+            background: #fff3cd;
+            border-left-color: #ffc107;
+        }
+
+        .tip {
+            background: #d1ecf1;
+            border-left-color: #17a2b8;
+        }
+
+        .success {
+            background: #d4edda;
+            border-left-color: #28a745;
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .app-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border-color: #667eea;
+        }
+
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .app-icon {
+            font-size: 3em;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .app-title {
+            flex: 1;
+        }
+
+        .app-title h4 {
+            color: #1e3c72;
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+
+        .app-category {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 3px 12px;
+            border-radius: 15px;
+            font-size: 0.75em;
+            font-weight: 600;
+        }
+
+        .app-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 10px 0;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .stars {
+            color: #ffc107;
+            font-weight: bold;
+        }
+
+        .app-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .app-features {
+            margin: 15px 0;
+        }
+
+        .app-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .app-features li {
+            padding: 5px 0 5px 25px;
+            position: relative;
+            color: #555;
+        }
+
+        .app-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .app-cost {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .app-cost.paid {
+            background: #667eea;
+        }
+
+        .app-cost.freemium {
+            background: #17a2b8;
+        }
+
+        .platform-badges {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .platform-badge {
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        .ios {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .android {
+            background: #34a853;
+            color: white;
+        }
+
+        .comparison-table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .quick-start {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .quick-start h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .quick-start ul {
+            list-style: none;
+        }
+
+        .quick-start li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+        }
+
+        .quick-start li:before {
+            content: "📱";
+            position: absolute;
+            left: 0;
+        }
+
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer a {
+            color: white;
+        }
+
+        .emoji {
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            header {
+                padding: 30px 20px 40px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            section h2 {
+                font-size: 1.5em;
+            }
+
+            .app-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table {
+                font-size: 0.85em;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="breadcrumb">
+                <a href="index.html">🏠 Community Hub Home</a>
+                <span>›</span>
+                <a href="immigrant-resources.html">All Resources</a>
+                <span>›</span>
+                <span style="opacity: 1;">Essential Apps Guide</span>
+            </div>
+            <div class="header-icon">📱</div>
+            <h1>Essential UK Apps</h1>
+            <p>Must-Have Mobile Apps for Transport, Banking, Food, Shopping & Daily Life</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#quick-start">Quick Start</a></li>
+                <li><a href="#transport">Transport</a></li>
+                <li><a href="#banking">Banking</a></li>
+                <li><a href="#food">Food & Shopping</a></li>
+                <li><a href="#communication">Communication</a></li>
+                <li><a href="#utilities">Utilities</a></li>
+                <li><a href="#lifestyle">Lifestyle</a></li>
+                <li><a href="#indian">Indian Community</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <section id="quick-start">
+                <h2><span class="emoji">🚀</span> Quick Start - Download These First</h2>
+                
+                <div class="quick-start">
+                    <h3>First Week Essentials (Top 10)</h3>
+                    <ul>
+                        <li><strong>Citymapper / Google Maps</strong> - Navigation & public transport</li>
+                        <li><strong>Your Bank App</strong> - Mobile banking (Monzo, Starling, or traditional bank)</li>
+                        <li><strong>WhatsApp</strong> - Primary messaging app in UK</li>
+                        <li><strong>Trainline</strong> - Book trains nationwide</li>
+                        <li><strong>Uber / Bolt</strong> - Taxi services</li>
+                        <li><strong>Deliveroo / Just Eat</strong> - Food delivery</li>
+                        <li><strong>Tesco / Sainsbury's App</strong> - Grocery shopping</li>
+                        <li><strong>NHS App</strong> - Healthcare access</li>
+                        <li><strong>Met Office</strong> - Weather (essential in UK!)</li>
+                        <li><strong>Too Good To Go</strong> - Save money on food</li>
+                    </ul>
+                </div>
+
+                <div class="info-box important">
+                    <h3><span class="emoji">⚠️</span> Before Downloading Apps</h3>
+                    <ul>
+                        <li>Set up UK App Store / Google Play account (may need UK payment method)</li>
+                        <li>Enable two-factor authentication for banking apps</li>
+                        <li>Check app permissions before granting access</li>
+                        <li>Keep apps updated for security</li>
+                        <li>Use strong, unique passwords for each app</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="transport">
+                <h2><span class="emoji">🚇</span> Transport & Travel Apps</h2>
+
+                <div class="app-grid">
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🗺️</div>
+                            <div class="app-title">
+                                <h4>Citymapper</h4>
+                                <span class="app-category">NAVIGATION</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.8/5</span>
+                        </div>
+                        <p class="app-description">The best app for navigating London and major UK cities. Real-time public transport info, route planning, and live disruptions.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Multi-modal journey planning (bus, tube, train, bike, walk)</li>
+                                <li>Real-time departures and delays</li>
+                                <li>Tells you which carriage to board</li>
+                                <li>Works in London, Manchester, Birmingham, Edinburgh</li>
+                                <li>Offline maps available</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🚂</div>
+                            <div class="app-title">
+                                <h4>Trainline</h4>
+                                <span class="app-category">RAIL TRAVEL</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.6/5</span>
+                        </div>
+                        <p class="app-description">Book train tickets across the UK and Europe. Find cheapest fares, split tickets, and manage railcards.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Compare prices from all train operators</li>
+                                <li>Add railcards for discounts (16-25, Family, etc.)</li>
+                                <li>Mobile tickets (no need to print)</li>
+                                <li>Live train times and platform info</li>
+                                <li>Seat reservations included</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free (no booking fees)</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🚕</div>
+                            <div class="app-title">
+                                <h4>Uber</h4>
+                                <span class="app-category">TAXI</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.5/5</span>
+                        </div>
+                        <p class="app-description">Ride-hailing service available in most UK cities. Cashless payments, fare estimates, and driver ratings.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Multiple vehicle options (UberX, Comfort, XL)</li>
+                                <li>Upfront pricing</li>
+                                <li>Split fare with friends</li>
+                                <li>Scheduled rides available</li>
+                                <li>Safety features (share trip, emergency button)</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost freemium">Pay per ride</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">⚡</div>
+                            <div class="app-title">
+                                <h4>Bolt</h4>
+                                <span class="app-category">TAXI</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.5/5</span>
+                        </div>
+                        <p class="app-description">Uber alternative, often cheaper. Growing rapidly in UK cities including London, Manchester, Birmingham.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Usually 10-20% cheaper than Uber</li>
+                                <li>Quick pickup times</li>
+                                <li>Cashless payments</li>
+                                <li>Eco-friendly options available</li>
+                                <li>Frequent discount codes</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost freemium">Pay per ride</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🅿️</div>
+                            <div class="app-title">
+                                <h4>JustPark / RingGo</h4>
+                                <span class="app-category">PARKING</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.3/5</span>
+                        </div>
+                        <p class="app-description">Find and pay for parking. Pre-book spaces, extend parking remotely, avoid fines.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Find nearby parking spaces</li>
+                                <li>Compare prices</li>
+                                <li>Cashless payment</li>
+                                <li>Extend parking time from your phone</li>
+                                <li>Airport parking deals</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free app (pay for parking)</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🚴</div>
+                            <div class="app-title">
+                                <h4>Santander Cycles / Lime</h4>
+                                <span class="app-category">BIKE HIRE</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.2/5</span>
+                        </div>
+                        <p class="app-description">Bike sharing schemes in major cities. Santander Cycles (London), Lime bikes and e-scooters nationwide.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Find nearest available bike</li>
+                                <li>Unlock with app</li>
+                                <li>£2 for 30 mins (Santander)</li>
+                                <li>E-bikes and e-scooters available (Lime)</li>
+                                <li>Eco-friendly transport option</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost freemium">Pay per ride</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box tip">
+                    <h3><span class="emoji">💡</span> London-Specific Transport Apps</h3>
+                    <ul>
+                        <li><strong>TfL Go</strong> - Official Transport for London app (tube, bus, river, cable car)</li>
+                        <li><strong>Oyster App</strong> - Manage your Oyster card, top up, check balance</li>
+                        <li><strong>Bus Times London</strong> - Real-time bus arrivals</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="banking">
+                <h2><span class="emoji">💳</span> Banking & Finance Apps</h2>
+
+                <div class="app-grid">
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🏦</div>
+                            <div class="app-title">
+                                <h4>Monzo</h4>
+                                <span class="app-category">DIGITAL BANK</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.8/5</span>
+                        </div>
+                        <p class="app-description">Popular digital bank, perfect for newcomers. Easy to open account, great app, instant notifications.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Open account in minutes (no proof of address needed initially)</li>
+                                <li>Instant spending notifications</li>
+                                <li>Fee-free spending abroad</li>
+                                <li>Budgeting tools and pots</li>
+                                <li>Split bills with friends</li>
+                                <li>24/7 customer support in app</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free account</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">⭐</div>
+                            <div class="app-title">
+                                <h4>Starling Bank</h4>
+                                <span class="app-category">DIGITAL BANK</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.9/5</span>
+                        </div>
+                        <p class="app-description">Another excellent digital bank option. Award-winning app, great for international transfers.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Quick account opening</li>
+                                <li>No foreign transaction fees</li>
+                                <li>Savings spaces</li>
+                                <li>Connected card for children</li>
+                                <li>Business accounts available</li>
+                                <li>Excellent customer service</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free account</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">💱</div>
+                            <div class="app-title">
+                                <h4>Revolut</h4>
+                                <span class="app-category">DIGITAL BANKING</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.6/5</span>
+                        </div>
+                        <p class="app-description">Multi-currency account. Excellent for international payments and foreign exchange.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Hold 30+ currencies</li>
+                                <li>Exchange at interbank rates</li>
+                                <li>Free international transfers</li>
+                                <li>Virtual cards for online shopping</li>
+                                <li>Cryptocurrency trading</li>
+                                <li>Travel insurance (paid plans)</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost freemium">Free + Premium plans</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🌍</div>
+                            <div class="app-title">
+                                <h4>Wise (TransferWise)</h4>
+                                <span class="app-category">MONEY TRANSFER</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.7/5</span>
+                        </div>
+                        <p class="app-description">Best for sending money to India. Low fees, real exchange rates, fast transfers.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Send money to India at real exchange rate</li>
+                                <li>Fees from 0.5% (much cheaper than banks)</li>
+                                <li>Fast transfers (usually same day)</li>
+                                <li>Multi-currency account available</li>
+                                <li>Debit card for spending abroad</li>
+                                <li>Transparent pricing</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Low transfer fees (0.5-1%)</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">📊</div>
+                            <div class="app-title">
+                                <h4>Emma</h4>
+                                <span class="app-category">MONEY MANAGEMENT</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.5/5</span>
+                        </div>
+                        <p class="app-description">Budget tracker that connects to all your bank accounts. See all finances in one place.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Connect multiple bank accounts</li>
+                                <li>Track spending by category</li>
+                                <li>Set budgets and get alerts</li>
+                                <li>Find and cancel subscriptions</li>
+                                <li>Bill tracking</li>
+                                <li>Financial insights and tips</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost freemium">Free + Pro (£4.99/month)</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">💰</div>
+                            <div class="app-title">
+                                <h4>PayPal</h4>
+                                <span class="app-category">PAYMENTS</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.4/5</span>
+                        </div>
+                        <p class="app-description">Widely accepted for online payments, send money to friends, and seller protection.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Secure online payments</li>
+                                <li>Send money to friends (free)</li>
+                                <li>Buyer protection</li>
+                                <li>Pay in shops with QR code</li>
+                                <li>Link bank account or card</li>
+                                <li>PayPal Credit available</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free (fees for business)</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box success">
+                    <h3>🇮🇳 Money Transfer Apps (UK to India)</h3>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>App</th>
+                                <th>Typical Fee</th>
+                                <th>Exchange Rate</th>
+                                <th>Speed</th>
+                                <th>Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Wise</strong></td>
+                                <td>0.5-1%</td>
+                                <td>Real rate</td>
+                                <td>Same day</td>
+                                <td>⭐⭐⭐⭐⭐</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Remitly</strong></td>
+                                <td>£2.99+</td>
+                                <td>Good</td>
+                                <td>Minutes-days</td>
+                                <td>⭐⭐⭐⭐☆</td>
+                            </tr>
+                            <tr>
+                                <td><strong>WorldRemit</strong></td>
+                                <td>£2.99+</td>
+                                <td>Competitive</td>
+                                <td>Minutes</td>
+                                <td>⭐⭐⭐⭐☆</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Western Union</strong></td>
+                                <td>£4.90+</td>
+                                <td>Fair</td>
+                                <td>Minutes-days</td>
+                                <td>⭐⭐⭐☆☆</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Xoom (PayPal)</strong></td>
+                                <td>£1.99+</td>
+                                <td>Competitive</td>
+                                <td>Minutes-days</td>
+                                <td>⭐⭐⭐⭐☆</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="food">
+                <h2><span class="emoji">🍽️</span> Food Delivery & Shopping Apps</h2>
+
+                <div class="app-grid">
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🛵</div>
+                            <div class="app-title">
+                                <h4>Deliveroo</h4>
+                                <span class="app-category">FOOD DELIVERY</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.4/5</span>
+                        </div>
+                        <p class="app-description">Largest food delivery service in UK. Thousands of restaurants including many Indian options.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Wide restaurant selection</li>
+                                <li>Track delivery in real-time</li>
+                                <li>Deliveroo Plus subscription (£3.49/month, free delivery)</li>
+                                <li>Schedule orders in advance</li>
+                                <li>Grocery delivery from shops</li>
+                                <li>Contact-free delivery option</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost freemium">Free app + delivery fees (£2-4)</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🍔</div>
+                            <div class="app-title">
+                                <h4>Just Eat</h4>
+                                <span class="app-category">FOOD DELIVERY</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.3/5</span>
+                        </div>
+                        <p class="app-description">Popular for takeaways, especially local restaurants and Indian food.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Order from local takeaways</li>
+                                <li>Many Indian restaurants</li>
+                                <li>Loyalty stamps for discounts</li>
+                                <li>No subscription needed</li>
+                                <li>Customer reviews</li>
+                                <li>Reorder previous meals easily</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost freemium">Free app + delivery fees vary</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🍕</div>
+                            <div class="app-title">
+                                <h4>Uber Eats</h4>
+                                <span class="app-category">FOOD DELIVERY</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.4/5</span>
+                        </div>
+                        <p class="app-description">Food delivery from Uber. Good restaurant variety, fast delivery in cities.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Same account as Uber rides</li>
+                                <li>Fast delivery times</li>
+                                <li>Eats Pass subscription (unlimited free delivery)</li>
+                                <li>Live order tracking</li>
+                                <li>Grocery delivery</li>
+                                <li>Frequent promotions</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost freemium">Free app + delivery fees (£2-5)</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">♻️</div>
+                            <div class="app-title">
+                                <h4>Too Good To Go</h4>
+                                <span class="app-category">FOOD WASTE</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.8/5</span>
+                        </div>
+                        <p class="app-description">Buy surplus food from restaurants and shops at 50-70% discount. Eco-friendly and budget-friendly!</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Save money on meals (£2-4 instead of £10-15)</li>
+                                <li>Reduce food waste</li>
+                                <li>Surprise bags from restaurants, cafes, supermarkets</li>
+                                <li>Collect in person</li>
+                                <li>Greggs, Pret, Costa, and more participate</li>
+                                <li>Perfect for students and budget-conscious</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free (pay for discounted food)</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🛒</div>
+                            <div class="app-title">
+                                <h4>Tesco</h4>
+                                <span class="app-category">GROCERY SHOPPING</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.5/5</span>
+                        </div>
+                        <p class="app-description">UK's largest supermarket. Home delivery, Clubcard points, meal deals.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Home delivery (book slots)</li>
+                                <li>Click & Collect</li>
+                                <li>Clubcard for points and discounts</li>
+                                <li>Scan as you shop in-store</li>
+                                <li>Digital Clubcard</li>
+                                <li>Weekly offers and promotions</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free (delivery from £4)</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🥫</div>
+                            <div class="app-title">
+                                <h4>Sainsbury's</h4>
+                                <span class="app-category">GROCERY SHOPPING</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.4/5</span>
+                        </div>
+                        <p class="app-description">Major supermarket with good quality produce. Nectar points loyalty scheme.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Online shopping & delivery</li>
+                                <li>Nectar card points</li>
+                                <li>SmartShop (scan in-store)</li>
+                                <li>Recipe ideas and meal planning</li>
+                                <li>Good selection of Indian ingredients</li>
+                                <li>Clothing and homeware too</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free (delivery from £1)</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🚀</div>
+                            <div class="app-title">
+                                <h4>Getir / Gorillas</h4>
+                                <span class="app-category">QUICK COMMERCE</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.3/5</span>
+                        </div>
+                        <p class="app-description">Ultra-fast grocery delivery (10-20 minutes). Perfect for last-minute needs.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Delivery in 10-20 minutes</li>
+                                <li>No minimum order</li>
+                                <li>Essential groceries, snacks, drinks</li>
+                                <li>Available in major cities</li>
+                                <li>Open late (some 24/7)</li>
+                                <li>Premium pricing but convenient</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost freemium">Free app (delivery £1.80+)</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🌶️</div>
+                            <div class="app-title">
+                                <h4>IndianGrocery / JustAsianFood</h4>
+                                <span class="app-category">INDIAN GROCERIES</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.2/5</span>
+                        </div>
+                        <p class="app-description">Specialized Indian grocery delivery. Spices, lentils, ready meals, and hard-to-find items.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Authentic Indian ingredients</li>
+                                <li>Fresh vegetables delivered</li>
+                                <li>Regional specialties</li>
+                                <li>Religious items (puja materials)</li>
+                                <li>Frozen snacks and sweets</li>
+                                <li>UK-wide delivery</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free app (delivery charges apply)</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="communication">
+                <h2><span class="emoji">💬</span> Communication Apps</h2>
+
+                <div class="app-grid">
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">📱</div>
+                            <div class="app-title">
+                                <h4>WhatsApp</h4>
+                                <span class="app-category">MESSAGING</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.8/5</span>
+                        </div>
+                        <p class="app-description">Primary messaging app in UK. Essential for both personal and professional communication.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Most popular messaging app in UK</li>
+                                <li>Free calls and video calls</li>
+                                <li>Group chats and broadcast lists</li>
+                                <li>End-to-end encryption</li>
+                                <li>Status updates</li>
+                                <li>Works on WiFi (save mobile data)</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">📧</div>
+                            <div class="app-title">
+                                <h4>Gmail / Outlook</h4>
+                                <span class="app-category">EMAIL</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.7/5</span>
+                        </div>
+                        <p class="app-description">Essential for professional communication, job applications, and official correspondence.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Manage multiple email accounts</li>
+                                <li>Smart categorization</li>
+                                <li>Calendar integration</li>
+                                <li>Large attachment support</li>
+                                <li>Search functionality</li>
+                                <li>Offline access</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">💼</div>
+                            <div class="app-title">
+                                <h4>Slack / Microsoft Teams</h4>
+                                <span class="app-category">WORK CHAT</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.5/5</span>
+                        </div>
+                        <p class="app-description">Professional workplace communication. Used by most UK companies.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Team channels and direct messaging</li>
+                                <li>File sharing</li>
+                                <li>Video calls and screen sharing</li>
+                                <li>App integrations</li>
+                                <li>Threaded conversations</li>
+                                <li>Mobile and desktop sync</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free (work provides)</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">📞</div>
+                            <div class="app-title">
+                                <h4>Skype / Zoom</h4>
+                                <span class="app-category">VIDEO CALLS</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.4/5</span>
+                        </div>
+                        <p class="app-description">Video calling for staying in touch with family in India and professional meetings.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>HD video and voice calls</li>
+                                <li>Screen sharing</li>
+                                <li>Group calls (Zoom: up to 100 people free)</li>
+                                <li>Call recording</li>
+                                <li>Virtual backgrounds</li>
+                                <li>Works across devices</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free (40 min limit on Zoom group calls)</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">📲</div>
+                            <div class="app-title">
+                                <h4>Facebook Messenger</h4>
+                                <span class="app-category">MESSAGING</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.3/5</span>
+                        </div>
+                        <p class="app-description">Popular for social messaging and marketplace communication.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Free calls and video calls</li>
+                                <li>Group chats</li>
+                                <li>Games and bots</li>
+                                <li>Money transfers (US only)</li>
+                                <li>Stories and reactions</li>
+                                <li>Works without Facebook app</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🔐</div>
+                            <div class="app-title">
+                                <h4>Signal / Telegram</h4>
+                                <span class="app-category">SECURE MESSAGING</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.7/5</span>
+                        </div>
+                        <p class="app-description">Privacy-focused messaging apps. Growing in popularity.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>End-to-end encryption</li>
+                                <li>Disappearing messages</li>
+                                <li>No ads or tracking</li>
+                                <li>Voice and video calls</li>
+                                <li>Group chats</li>
+                                <li>Open source (Signal)</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="utilities">
+                <h2><span class="emoji">🔧</span> Utilities & Essential Services</h2>
+
+                <div class="app-grid">
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🏥</div>
+                            <div class="app-title">
+                                <h4>NHS App</h4>
+                                <span class="app-category">HEALTHCARE</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.5/5</span>
+                        </div>
+                        <p class="app-description">Official NHS app for managing your healthcare. Essential for prescriptions and appointments.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Book GP appointments</li>
+                                <li>Order repeat prescriptions</li>
+                                <li>View medical records</li>
+                                <li>Check symptoms</li>
+                                <li>Register organ donation</li>
+                                <li>COVID-19 vaccination record</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🌦️</div>
+                            <div class="app-title">
+                                <h4>Met Office Weather</h4>
+                                <span class="app-category">WEATHER</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.7/5</span>
+                        </div>
+                        <p class="app-description">Official UK weather service. Most accurate forecasts for UK locations.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Hour-by-hour forecasts</li>
+                                <li>Severe weather warnings</li>
+                                <li>Rainfall radar</li>
+                                <li>UV index</li>
+                                <li>Pollen count</li>
+                                <li>Multiple location tracking</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">⚡</div>
+                            <div class="app-title">
+                                <h4>Bulb / Octopus Energy</h4>
+                                <span class="app-category">ENERGY</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.4/5</span>
+                        </div>
+                        <p class="app-description">Manage gas and electricity bills. Submit meter readings, track usage.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Submit meter readings</li>
+                                <li>View energy usage</li>
+                                <li>Pay bills</li>
+                                <li>Get estimates and alerts</li>
+                                <li>Track costs</li>
+                                <li>Renewable energy options</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free (energy provider app)</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">💡</div>
+                            <div class="app-title">
+                                <h4>MoneySuperMarket</h4>
+                                <span class="app-category">PRICE COMPARISON</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.3/5</span>
+                        </div>
+                        <p class="app-description">Compare prices for insurance, utilities, broadband, and more. Save hundreds of pounds.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Compare car insurance</li>
+                                <li>Energy switching</li>
+                                <li>Broadband deals</li>
+                                <li>Credit cards and loans</li>
+                                <li>Travel insurance</li>
+                                <li>Mobile phone contracts</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🔑</div>
+                            <div class="app-title">
+                                <h4>1Password / LastPass</h4>
+                                <span class="app-category">PASSWORD MANAGER</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.7/5</span>
+                        </div>
+                        <p class="app-description">Secure password storage. Essential with so many new accounts to create in UK.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Store all passwords securely</li>
+                                <li>Auto-fill login details</li>
+                                <li>Generate strong passwords</li>
+                                <li>Sync across devices</li>
+                                <li>Secure notes storage</li>
+                                <li>Two-factor authentication</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost freemium">Free basic / £2.99/month premium</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">📄</div>
+                            <div class="app-title">
+                                <h4>Adobe Scan / CamScanner</h4>
+                                <span class="app-category">DOCUMENT SCANNER</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.6/5</span>
+                        </div>
+                        <p class="app-description">Scan documents with your phone. Essential for paperwork, receipts, official documents.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Scan documents to PDF</li>
+                                <li>Auto edge detection</li>
+                                <li>Text recognition (OCR)</li>
+                                <li>Cloud storage integration</li>
+                                <li>Share as PDF or image</li>
+                                <li>Multi-page scanning</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost freemium">Free basic / Premium features paid</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="lifestyle">
+                <h2><span class="emoji">🎯</span> Lifestyle & Entertainment</h2>
+
+                <div class="app-grid">
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🎬</div>
+                            <div class="app-title">
+                                <h4>BBC iPlayer / ITV Hub</h4>
+                                <span class="app-category">TV STREAMING</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.7/5</span>
+                        </div>
+                        <p class="app-description">Watch UK TV shows, news, and documentaries. Requires TV license.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Live TV and catch-up</li>
+                                <li>BBC News and local news</li>
+                                <li>Sports coverage</li>
+                                <li>Download for offline viewing</li>
+                                <li>No ads (BBC)</li>
+                                <li>Subtitles available</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free (TV license required: £169.50/year)</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">📺</div>
+                            <div class="app-title">
+                                <h4>Netflix / Amazon Prime</h4>
+                                <span class="app-category">STREAMING</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.6/5</span>
+                        </div>
+                        <p class="app-description">Entertainment streaming. Netflix has good Bollywood content, Prime includes delivery benefits.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Unlimited movies and shows</li>
+                                <li>Bollywood and Indian content</li>
+                                <li>Download for offline</li>
+                                <li>Multiple profiles</li>
+                                <li>4K streaming (premium plans)</li>
+                                <li>Prime: Free next-day delivery on Amazon</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost paid">Netflix: £6.99-17.99/month | Prime: £8.99/month</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🎵</div>
+                            <div class="app-title">
+                                <h4>Spotify / Apple Music</h4>
+                                <span class="app-category">MUSIC STREAMING</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.8/5</span>
+                        </div>
+                        <p class="app-description">Music streaming with extensive Indian music libraries.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>70+ million songs</li>
+                                <li>Bollywood, regional, devotional music</li>
+                                <li>Podcasts</li>
+                                <li>Offline downloads</li>
+                                <li>Personalized playlists</li>
+                                <li>Student discounts available</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost freemium">Free with ads / £10.99/month premium</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🏃</div>
+                            <div class="app-title">
+                                <h4>Strava / Couch to 5K</h4>
+                                <span class="app-category">FITNESS</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.7/5</span>
+                        </div>
+                        <p class="app-description">Track running, cycling, and workouts. Join local running clubs.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>GPS tracking</li>
+                                <li>Social fitness network</li>
+                                <li>Challenges and goals</li>
+                                <li>Route discovery</li>
+                                <li>Training plans (Couch to 5K)</li>
+                                <li>Connect with local groups</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost freemium">Free / Premium £5.99/month</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🎟️</div>
+                            <div class="app-title">
+                                <h4>Eventbrite / Meetup</h4>
+                                <span class="app-category">EVENTS & SOCIAL</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.5/5</span>
+                        </div>
+                        <p class="app-description">Discover events, make friends, join groups. Great for meeting people and exploring your city.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Find local events</li>
+                                <li>Join interest groups</li>
+                                <li>Cultural events and festivals</li>
+                                <li>Professional networking events</li>
+                                <li>Sports and activities</li>
+                                <li>Book tickets</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free (some events paid)</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🛍️</div>
+                            <div class="app-title">
+                                <h4>Amazon / eBay / Vinted</h4>
+                                <span class="app-category">SHOPPING</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.6/5</span>
+                        </div>
+                        <p class="app-description">Online shopping essentials. Amazon for everything, eBay for deals, Vinted for second-hand clothes.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Millions of products</li>
+                                <li>Next-day delivery (Amazon Prime)</li>
+                                <li>Price comparison</li>
+                                <li>User reviews</li>
+                                <li>Easy returns</li>
+                                <li>Track orders</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free (pay for items)</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="indian">
+                <h2><span class="emoji">🇮🇳</span> Indian Community & Content Apps</h2>
+
+                <div class="app-grid">
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🎬</div>
+                            <div class="app-title">
+                                <h4>Disney+ Hotstar</h4>
+                                <span class="app-category">INDIAN STREAMING</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.7/5</span>
+                        </div>
+                        <p class="app-description">Indian movies, TV shows, cricket, and regional content. Essential for Bollywood fans.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Latest Bollywood movies</li>
+                                <li>Indian TV serials</li>
+                                <li>Live cricket (IPL, internationals)</li>
+                                <li>Regional content (Tamil, Telugu, etc.)</li>
+                                <li>Kids content in Hindi</li>
+                                <li>Download for offline</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost paid">£9.99/month or £99.99/year</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">📻</div>
+                            <div class="app-title">
+                                <h4>BBC Asian Network</h4>
+                                <span class="app-category">RADIO</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.5/5</span>
+                        </div>
+                        <p class="app-description">British Asian music, news, and culture. Mix of Bollywood, Bhangra, and UK Asian artists.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Live radio stream</li>
+                                <li>Bollywood and regional music</li>
+                                <li>Catch-up shows</li>
+                                <li>UK Asian news and features</li>
+                                <li>Events and festivals coverage</li>
+                                <li>Free to listen</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🍛</div>
+                            <div class="app-title">
+                                <h4>Indian Restaurant Finder</h4>
+                                <span class="app-category">DINING</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.3/5</span>
+                        </div>
+                        <p class="app-description">Find authentic Indian restaurants near you. Reviews, menus, delivery options.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Search by cuisine (North/South Indian, regional)</li>
+                                <li>User reviews and ratings</li>
+                                <li>Menus with prices</li>
+                                <li>Delivery and takeaway options</li>
+                                <li>Halal and vegetarian filters</li>
+                                <li>Special offers</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">📿</div>
+                            <div class="app-title">
+                                <h4>Temple Finder / Hindu Calendar</h4>
+                                <span class="app-category">RELIGIOUS</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.4/5</span>
+                        </div>
+                        <p class="app-description">Find Hindu temples, Gurdwaras, mosques near you. Festival dates and religious calendars.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Locate nearby temples</li>
+                                <li>Service times and events</li>
+                                <li>Festival calendar (Diwali, Holi, etc.)</li>
+                                <li>Panchang and muhurat</li>
+                                <li>Daily prayers and mantras</li>
+                                <li>Temple contact details</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free (some features paid)</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">📰</div>
+                            <div class="app-title">
+                                <h4>Times of India / Indian News</h4>
+                                <span class="app-category">NEWS</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.3/5</span>
+                        </div>
+                        <p class="app-description">Stay updated with news from India. All major Indian newspapers and TV channels.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Latest news from India</li>
+                                <li>Regional news in local languages</li>
+                                <li>Sports updates</li>
+                                <li>Entertainment and Bollywood</li>
+                                <li>Push notifications</li>
+                                <li>Video news clips</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost">Free (with ads)</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+
+                    <div class="app-card">
+                        <div class="app-header">
+                            <div class="app-icon">🎤</div>
+                            <div class="app-title">
+                                <h4>Smule / StarMaker</h4>
+                                <span class="app-category">KARAOKE</span>
+                            </div>
+                        </div>
+                        <div class="app-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.4/5</span>
+                        </div>
+                        <p class="app-description">Sing Bollywood songs with karaoke tracks. Social singing community.</p>
+                        <div class="app-features">
+                            <ul>
+                                <li>Huge Bollywood song library</li>
+                                <li>Duet with friends</li>
+                                <li>Audio effects</li>
+                                <li>Share recordings</li>
+                                <li>Join competitions</li>
+                                <li>Connect with singers</li>
+                            </ul>
+                        </div>
+                        <span class="app-cost freemium">Free / Premium £9.99/month</span>
+                        <div class="platform-badges">
+                            <span class="platform-badge ios">iOS</span>
+                            <span class="platform-badge android">Android</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box success">
+                    <h3>🗓️ Indian Community Events Apps & Platforms</h3>
+                    <ul>
+                        <li><strong>Meetup:</strong> Search for "Indian," "Bollywood," "South Asian" groups in your city</li>
+                        <li><strong>Facebook Groups:</strong> "Indians in London," "Indians in Manchester," etc.</li>
+                        <li><strong>EventBrite:</strong> Diwali events, Holi celebrations, Bollywood nights</li>
+                        <li><strong>Timeout London:</strong> Indian cultural events, exhibitions, performances</li>
+                        <li><strong>Local Temple Apps:</strong> Many temples have their own apps for events</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2><span class="emoji">✅</span> Download Priority List</h2>
+                
+                <div class="info-box important">
+                    <h3>Week 1 - Absolute Essentials</h3>
+                    <ol>
+                        <li>🏦 Your bank app (Monzo/Starling or traditional bank)</li>
+                        <li>🗺️ Citymapper / Google Maps</li>
+                        <li>📱 WhatsApp</li>
+                        <li>🚂 Trainline</li>
+                        <li>🏥 NHS App</li>
+                        <li>🌦️ Met Office Weather</li>
+                        <li>🚕 Uber / Bolt</li>
+                        <li>📧 Gmail</li>
+                    </ol>
+                </div>
+
+                <div class="info-box success">
+                    <h3>Week 2 - Daily Life</h3>
+                    <ol>
+                        <li>🍔 Deliveroo / Just Eat</li>
+                        <li>🛒 Tesco / Sainsbury's</li>
+                        <li>♻️ Too Good To Go</li>
+                        <li>🔧 Your energy provider app</li>
+                        <li>💡 MoneySuperMarket</li>
+                        <li>📺 BBC iPlayer</li>
+                        <li>🛍️ Amazon</li>
+                    </ol>
+                </div>
+
+                <div class="info-box tip">
+                    <h3>Month 1 - Settling In</h3>
+                    <ol>
+                        <li>🌍 Wise (for India transfers)</li>
+                        <li>🎬 Disney+ Hotstar (if you want Bollywood)</li>
+                        <li>📊 Emma (budget tracking)</li>
+                        <li>🎟️ Eventbrite / Meetup (social life)</li>
+                        <li>🔐 Password manager</li>
+                        <li>📄 Document scanner</li>
+                        <li>🎵 Spotify / Apple Music</li>
+                        <li>🌶️ Indian grocery delivery app</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section>
+                <h2><span class="emoji">💡</span> Pro Tips for Using Apps in UK</h2>
+                
+                <div class="info-box tip">
+                    <ul>
+                        <li><strong>Set up UK App Store account:</strong> Some apps only available in UK store</li>
+                        <li><strong>Enable location services:</strong> Many transport and food apps need this</li>
+                        <li><strong>Notifications:</strong> Enable for banking, NHS, and delivery apps</li>
+                        <li><strong>WiFi first:</strong> Download large apps on WiFi to save mobile data</li>
+                        <li><strong>Offline maps:</strong> Download Google Maps offline for your area</li>
+                        <li><strong>Student discounts:</strong> Many apps offer student pricing (Spotify, Apple Music, Amazon Prime)</li>
+                        <li><strong>Cashback apps:</strong> TopCashback, Quidco for money back on purchases</li>
+                        <li><strong>Storage management:</strong> Regularly clear cache and delete unused apps</li>
+                        <li><strong>Privacy settings:</strong> Review app permissions regularly</li>
+                        <li><strong>Auto-updates:</strong> Keep apps updated for security and features</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p><strong>UK Indian Community Hub</strong></p>
+            <p style="margin-top: 10px;">
+                <a href="index.html" style="color: white; text-decoration: underline;">← Back to Home</a> | 
+                <a href="immigrant-resources.html" style="color: white; text-decoration: underline;">Browse All Resources</a> | 
+                <a href="uk-settling-guide.html" style="color: white; text-decoration: underline;">UK Settling Guide</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 0.9em;"><strong>Disclaimer:</strong> App features and pricing are subject to change. Always check latest information on official app stores. Ratings are approximate and may vary.</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">© 2025 UK Indian Community Hub | Stay connected! 📱</p>
+        </footer>
+    </div>
+</body>
+</html>
