@@ -44,6 +44,395 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            position: relative;
+        }
+
+        .beta-badge {
+            background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+            color: #1e3c72;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(255, 193, 7, 0.4);
+            animation: pulse-beta 2s infinite;
+        }
+
+        .beta-badge:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(255, 193, 7, 0.6);
+        }
+
+        @keyframes pulse-beta {
+            0%, 100% {
+                box-shadow: 0 2px 8px rgba(255, 193, 7, 0.4);
+            }
+            50% {
+                box-shadow: 0 2px 15px rgba(255, 193, 7, 0.7);
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s;
+            overflow-y: auto;
+            padding: 20px 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            margin: 20px auto;
+            padding: 0;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.4s;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .modal-header h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            padding-right: 40px;
+        }
+
+        .modal-header .beta-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .close {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            line-height: 1;
+            z-index: 10001;
+        }
+
+        .close:hover,
+        .close:focus {
+            transform: rotate(90deg);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .modal-body {
+            padding: 30px 20px;
+            max-height: calc(80vh - 150px);
+            overflow-y: auto;
+        }
+
+        .modal-body p {
+            font-size: 1em;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .info-section {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .info-section h3 {
+            color: #1e3c72;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2em;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-box h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 12px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            font-size: 1.3em;
+            min-width: 25px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            word-break: break-all;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        .features-list li {
+            padding: 8px 0 8px 30px;
+            position: relative;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .features-list li:before {
+            content: "🚧";
+            position: absolute;
+            left: 0;
+            font-size: 1.1em;
+        }
+
+        .disclaimer {
+            background: #f8d7da;
+            border-left: 5px solid #dc3545;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .disclaimer h4 {
+            color: #dc3545;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1em;
+        }
+
+        .disclaimer p {
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 95%;
+                margin: 10px auto;
+            }
+
+            .modal-body {
+                padding: 20px 15px;
+            }
+
+            .modal-header {
+                padding: 25px 15px;
+            }
+
+            .modal-header h2 {
+                font-size: 1.4em;
+                padding-right: 35px;
+            }
+
+            .modal-header .beta-icon {
+                font-size: 2.5em;
+            }
+
+            .close {
+                right: 10px;
+                top: 10px;
+                width: 30px;
+                height: 30px;
+                font-size: 24px;
+            }
+
+            .beta-badge {
+                font-size: 0.45em;
+                padding: 3px 8px;
+            }
+
+            .contact-box {
+                padding: 15px;
+            }
+
+            .contact-box h3 {
+                font-size: 1.1em;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                font-size: 0.9em;
+            }
+
+            .info-section {
+                padding: 12px;
+            }
+
+            .info-section h3 {
+                font-size: 1.1em;
+            }
+
+            .disclaimer {
+                padding: 12px;
+            }
+
+            .disclaimer h4 {
+                font-size: 1em;
+            }
+
+            .modal-body p {
+                font-size: 0.95em;
+            }
+
+            .features-list li {
+                font-size: 0.9em;
+                padding: 6px 0 6px 28px;
+            }
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 9999;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s;
+            font-size: 1.5em;
+            border: none;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .scroll-to-top.show {
+            display: flex;
+            animation: fadeInUp 0.3s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll Progress Indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            z-index: 10001;
+            transition: width 0.1s;
+        }
+
+        @media (max-width: 768px) {
+            .scroll-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.3em;
+            }
+
+            .scroll-progress {
+                height: 3px;
+            }
         }
 
         nav ul {
@@ -414,12 +803,20 @@
     </style>
 </head>
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()" title="Back to top">
+        ↑
+    </button>
     <!-- Navigation -->
     <nav>
         <div class="container">
             <div class="logo">
                 <span>🇮🇳</span>
                 <span>UK Indian Community Hub</span>
+                <span class="beta-badge" onclick="openBetaModal()">Beta</span>
             </div>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -431,6 +828,87 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Beta Information Modal -->
+    <div id="betaModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeBetaModal()">&times;</span>
+                <div class="beta-icon">🚧</div>
+                <h2>Website Under Development</h2>
+                <p style="opacity: 0.9; margin-top: 10px;">We're Building Something Special for You</p>
+            </div>
+            <div class="modal-body">
+                <p>Welcome to the <strong>UK Indian Community Hub Beta</strong>! Thank you for being one of our early visitors.</p>
+                
+                <div class="info-section">
+                    <h3>⚠️ Important Notice</h3>
+                    <p><strong>This website is currently in active development.</strong> While we strive for accuracy, please note:</p>
+                    <ul class="features-list">
+                        <li>Information may be incomplete or subject to change</li>
+                        <li>Some features are still being built and tested</li>
+                        <li>Data accuracy cannot be guaranteed at this stage</li>
+                        <li>Content is being continuously updated and improved</li>
+                        <li>Design and functionality may change without notice</li>
+                    </ul>
+                </div>
+
+                <div class="disclaimer">
+                    <h4>⚖️ Disclaimer</h4>
+                    <p style="color: #721c24; margin: 0;"><strong>Always verify critical information</strong> with official sources such as UK Government websites (gov.uk), Home Office, NHS, or qualified legal professionals before making important decisions.</p>
+                </div>
+
+                <div class="contact-box">
+                    <h3>📞 Get in Touch with the Developer</h3>
+                    <p style="opacity: 0.95; margin-bottom: 20px;">Have feedback, found an error, or want to contribute? We'd love to hear from you!</p>
+                    
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <strong>Email:</strong><br>
+                            <a href="/cdn-cgi/l/email-protection#385c5d4e5d5457485d4a784d5351565c51595b5755554d56514c41165b5755"><span class="__cf_email__" data-cfemail="ea8e8f9c8f86859a8f98aa9f8183848e838b898587879f84839e93c4898587">[email&#160;protected]</span></a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon">💬</span>
+                        <div>
+                            <strong>WhatsApp:</strong><br>
+                            <a href="https://wa.me/447700900000">+44 7700 900000</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon">💼</span>
+                        <div>
+                            <strong>LinkedIn:</strong><br>
+                            <a href="https://linkedin.com/in/ukindiacommunity" target="_blank">linkedin.com/in/ukindiacommunity</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon">🐙</span>
+                        <div>
+                            <strong>GitHub:</strong><br>
+                            <a href="https://github.com/ukindiacommunity" target="_blank">github.com/ukindiacommunity</a>
+                        </div>
+                    </div>
+
+                    <p style="margin-top: 20px; font-size: 0.95em; opacity: 0.9;">
+                        <strong>Working Hours:</strong> Monday - Friday, 9 AM - 6 PM GMT<br>
+                        <strong>Response Time:</strong> Within 24-48 hours
+                    </p>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px; padding-top: 25px; border-top: 2px solid #e0e0e0;">
+                    <p style="color: #666; font-size: 0.95em; margin-bottom: 15px;">Thank you for your patience and support as we build this community resource together! 🙏</p>
+                    <button onclick="closeBetaModal()" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 12px 40px; border-radius: 25px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 20px rgba(102, 126, 234, 0.5)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(102, 126, 234, 0.3)'">
+                        I Understand
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -683,5 +1161,70 @@
             </p>
         </div>
     </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Beta Modal Functions
+        function openBetaModal() {
+            document.getElementById('betaModal').style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeBetaModal() {
+            document.getElementById('betaModal').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('betaModal');
+            if (event.target == modal) {
+                closeBetaModal();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeBetaModal();
+            }
+        });
+
+        // Show beta modal automatically on first visit (optional - commented out)
+        // window.addEventListener('load', function() {
+        //     if (!sessionStorage.getItem('betaModalSeen')) {
+        //         setTimeout(openBetaModal, 2000);
+        //         sessionStorage.setItem('betaModalSeen', 'true');
+        //     }
+        // });
+
+        // ===== Scroll to Top Button =====
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        const scrollProgress = document.getElementById('scrollProgress');
+
+        // Show/hide scroll to top button and update progress bar
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercentage = (scrollTop / scrollHeight) * 100;
+
+            // Update progress bar
+            scrollProgress.style.width = scrollPercentage + '%';
+
+            // Show/hide scroll to top button
+            if (scrollTop > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </body>
 </html>
